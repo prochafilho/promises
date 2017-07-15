@@ -22,4 +22,14 @@ let ajax = link =>
        )
     );
 
+let login = () => 
+  until(async () => {
+
+    const user = await ajax()
+
+    return user.loggedIn === true
+  }, 1)
+
+
+module.exports = { login }
 
